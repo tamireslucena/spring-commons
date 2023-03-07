@@ -4,12 +4,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class LogDescription {
 
-    @JsonProperty("step")
+    @JsonProperty(value = "step", required = true)
     private String step;
 
-    @JsonProperty(value = "timestamp")
+    @JsonProperty(value = "timestamp", required = true)
     private String timestamp;
 
-    @JsonProperty("message")
+    @JsonProperty(value = "message", required = true)
     private String message;
 }

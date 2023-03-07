@@ -10,23 +10,23 @@ import java.util.List;
 @Data
 public class LogJsonParams {
 
-    @JsonProperty("id")
+    @JsonProperty(value = "id", required = true)
     private String id;
 
-    @JsonProperty("name")
+    @JsonProperty(value = "name", required = true)
     private String name;
 
-    @JsonProperty("age")
+    @JsonProperty(value = "age", required = true)
     private Integer age;
 
     @JsonIgnore
-    @JsonProperty("created_at")
+    @JsonProperty(value = "created_at", required = true)
     private LocalDateTime createdAt;
 
     @JsonIgnore
-    @JsonProperty("updated_at")
+    @JsonProperty(value = "updated_at", required = true)
     private LocalDateTime updatedAt;
 
-    @JsonProperty("descriptions")
+    @JsonProperty(value = "descriptions", required = true)
     private List<LogDescription> descriptions;
 }
