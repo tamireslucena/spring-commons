@@ -31,17 +31,13 @@ public class TestController {
 
         LogJsonParams logParams = LogJsonParams.builder()
                 .id("aaa")
-                .name("tata")
+                .name("tata ")
                 .age(12)
                 .createdAt(new Date())
                 .descriptions(list)
                 .build();
 
         LogJsonUtils.info(log, logParams);
-
-
-
-
 
         ResponseEntity<String> response = new ResponseEntity<>("não", HttpStatus.OK);
         return response;
