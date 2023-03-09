@@ -1,13 +1,21 @@
 package com.tamireslucena.springcommons.utils;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.tamireslucena.springcommons.models.LogJsonParams;
 import org.slf4j.Logger;
 
 public class LogJsonUtils {
-    public static void info(Logger log, String message){
-        log.info(LogSanitizerUtil.sanitize(message));
+
+    private static ObjectMapper objectMapper = new ObjectMapper();
+
+     public static void info(Logger log, LogJsonParams params) throws JsonProcessingException {
+        log.info(LogSanitizerUtil.sanitize(toJson(params)));
     }
 
-    public static void info(Logger log, String message, Object... object){
-        info(log, LogSanitizerUtil.sanitize(String.format(message, object)));
+    private static String toJson(LogJsonParams params) throws JsonProcessingException {
+        return objectMapper.writeValueAsString(params);
     }
 }
+
+
