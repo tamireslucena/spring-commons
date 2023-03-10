@@ -10,6 +10,7 @@ public class LogJsonUtils {
     private static ObjectMapper objectMapper = new ObjectMapper();
 
      public static void info(Logger log, LogJsonParams params) throws JsonProcessingException {
+
         log.info(LogSanitizerUtil.sanitize(toJson(params)));
     }
 

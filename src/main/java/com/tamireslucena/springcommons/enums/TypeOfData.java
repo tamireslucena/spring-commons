@@ -1,7 +1,7 @@
 package com.tamireslucena.springcommons.enums;
 
 public enum TypeOfData {
-    CPF, CNPJ, NOME, OUTROS;
+    DOCUMENT, OTHER;
 
     private TypeOfData(){}
 }
